@@ -6,7 +6,7 @@ INCLUDES_PATH		=	./includes
 
 MAKE				=	make --no-print-directory\
 							INCLUDES_PATH=../../$(INCLUDES_PATH)\
-							NAME=../../$(NAME)
+							NAME=../../$(NAME) -C
 COPY				=	@cp $@ $(NAME)
 AR					=	@ar
 
@@ -20,18 +20,14 @@ SRCS = $(LIBFT_PATH) $(FT_PRINTF_PATH) $(GNL_PATH)
 
 all: compile
 
-compile:
-	for src in $(SRCS); do \
-		echo test; \
-		cd $$src && make; \
+compile: $(SRCS)
+	@for src in $(SRCS); do \
+		$(MAKE) $$src; \
 	done;
 
 clean			:
-	rm -rf $(SRCS)
-	@COUNT=$(SRCS_COUNT);\
-	for i in `seq 1 $$COUNT`; do \
-		MAKE_TARGET=$$(echo $(SRCS) | cut -d' ' -f$$i); \
-		echo $$MAKE_TARGET; \
+	@for src in $(SRCS); do \
+		$(MAKE) $$src clean; \
 	done;
 
 fclean	:	clean
