@@ -16,7 +16,9 @@ FT_PRINTF_PATH 		=	$(SRCS_PATH)/ft_printf/
 LIBFT_PATH			=	$(SRCS_PATH)/libft/
 GNL_PATH			=	$(SRCS_PATH)/get_next_line/
 
-SRCS = $(LIBFT_PATH) $(FT_PRINTF_PATH) $(GNL_PATH)
+SRCS				=	$(LIBFT_PATH)\
+						$(FT_PRINTF_PATH)\
+						$(GNL_PATH)
 
 all: compile
 
