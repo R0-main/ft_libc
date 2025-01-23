@@ -15,10 +15,12 @@ SRCS_PATH			=	./srcs
 FT_PRINTF_PATH 		=	$(SRCS_PATH)/ft_printf/
 LIBFT_PATH			=	$(SRCS_PATH)/libft/
 GNL_PATH			=	$(SRCS_PATH)/get_next_line/
+STRINGS_PATH		=	$(SRCS_PATH)/strings/
 
 SRCS				=	$(LIBFT_PATH)\
 						$(FT_PRINTF_PATH)\
-						$(GNL_PATH)
+						$(GNL_PATH)\
+						$(STRINGS_PATH)
 
 all: compile
 
