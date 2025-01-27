@@ -6,7 +6,7 @@
 /*   By: rguigneb <rguigneb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 14:56:52 by rguigneb          #+#    #+#             */
-/*   Updated: 2025/01/21 11:44:31 by rguigneb         ###   ########.fr       */
+/*   Updated: 2025/01/27 08:35:45 by rguigneb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*update_str(char *str, char *buffer, size_t size)
 
 	if (!str)
 	{
-		empty = (char *)malloc(1);
+		empty = (char *)MALLOC(1);
 		if (!empty)
 			return (NULL);
 		empty[0] = 0;

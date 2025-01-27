@@ -6,10 +6,11 @@
 /*   By: rguigneb <rguigneb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 19:26:01 by rguigneb          #+#    #+#             */
-/*   Updated: 2025/01/21 11:41:55 by rguigneb         ###   ########.fr       */
+/*   Updated: 2025/01/27 08:57:19 by rguigneb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "garbadge.h"
 #include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
@@ -29,7 +30,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		if (len > s_start_len)
 			len = s_start_len;
 	}
-	result = (char *)malloc(sizeof(char) * len + 1);
+	result = (char *)MALLOC(sizeof(char) * len + 1);
 	if (!result)
 		return (NULL);
 	while (s[++i] && i < len)

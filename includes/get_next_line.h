@@ -6,7 +6,7 @@
 /*   By: rguigneb <rguigneb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 14:56:50 by rguigneb          #+#    #+#             */
-/*   Updated: 2025/01/21 10:01:37 by rguigneb         ###   ########.fr       */
+/*   Updated: 2025/01/27 08:35:53 by rguigneb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 # define GET_NEXT_LINE_H
 
+# include "garbadge.h"
+# include "libft.h"
 # include <fcntl.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include "libft.h"
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1

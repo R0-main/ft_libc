@@ -1,36 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   safe_free.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rguigneb <rguigneb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 19:26:01 by rguigneb          #+#    #+#             */
-/*   Updated: 2025/01/27 08:57:09 by rguigneb         ###   ########.fr       */
+/*   Created: 2025/01/27 08:31:08 by rguigneb          #+#    #+#             */
+/*   Updated: 2025/01/27 08:31:55 by rguigneb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "garbadge.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void	safe_free(void *pointer)
 {
-	size_t	i;
-	size_t	k;
-	size_t	total_len;
-	char	*result;
+	t_list	*tmp;
+	t_list	*lst;
+	t_list	*prev;
+	t_list	**garbage_head;
 
-	i = -1;
-	k = 0;
-	total_len = ft_strlen(s1) + ft_strlen(s2) + 1;
-	result = (char *)MALLOC(sizeof(char) * total_len);
-	if (!result)
-		return (NULL);
-	while (s1[++i])
-		result[k++] = s1[i];
-	i = -1;
-	while (s2[++i])
-		result[k++] = s2[i];
-	result[k] = 0;
-	return (result);
+	garbage_head = get_garbage();
+	if (!garbage_head || !*garbage_head)
+		return ;
+	lst = *garbage_head;
+	prev = NULL;
+	while (lst)
+	{
+		if (lst->content == pointer)
+		{
+			if (prev)
+				prev->next = lst->next;
+			free(lst);
+			break ;
+		}
+		prev = lst;
+		lst = lst->next;
+	}
+	free(pointer);
 }

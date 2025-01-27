@@ -1,12 +1,9 @@
 NAME				=	ft_libc.a
 
 CC 					=	@clang
-CFLAGS 				=	-Wall -Werror -Wextra -Iincludes
-INCLUDES_PATH		=	./includes
+INCLUDES_PATH		=	../../includes
+CFLAGS 				=	-Wall -Werror -Wextra -I$(INCLUDES_PATH)
 
-MAKE				=	make --no-print-directory\
-							INCLUDES_PATH=../../$(INCLUDES_PATH)\
-							NAME=../../$(NAME) -C
 COPY				=	@cp $@ $(NAME)
 AR					=	@ar
 
@@ -22,9 +19,19 @@ SRCS				=	$(LIBFT_PATH)\
 						$(GNL_PATH)\
 						$(STRINGS_PATH)
 
-all: compile
+ifeq ($(SAFE), 1)
+    CFLAGS += -DMALLOC=safe_malloc
+else
+	CFLAGS += -DMALLOC=malloc
+endif
 
-compile: $(SRCS)
+MAKE				=	make --no-print-directory\
+							CFLAGS="$(CFLAGS)"\
+							NAME=../../$(NAME) -C
+
+all: $(NAME)
+
+$(NAME): $(SRCS)
 	@for src in $(SRCS); do \
 		$(MAKE) $$src; \
 	done;
@@ -41,4 +48,4 @@ re				:	fclean all
 
 bonus			:	all
 
-.PHONY			:	run compile all dev re fclean clean bonus
+.PHONY			:	run all dev re fclean clean bonus

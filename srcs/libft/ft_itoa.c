@@ -6,11 +6,12 @@
 /*   By: rguigneb <rguigneb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 19:26:01 by rguigneb          #+#    #+#             */
-/*   Updated: 2025/01/21 11:40:27 by rguigneb         ###   ########.fr       */
+/*   Updated: 2025/01/27 08:56:39 by rguigneb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "garbadge.h"
 
 static size_t	get_number_len(long n)
 {
@@ -41,7 +42,7 @@ char	*ft_itoa(int n)
 	i = get_number_len(nb);
 	is_negative = nb < 0;
 	number_len = i;
-	result = (char *)malloc(number_len * sizeof(char) + 1);
+	result = (char *)MALLOC(number_len * sizeof(char) + 1);
 	if (!result)
 		return (NULL);
 	if (is_negative)

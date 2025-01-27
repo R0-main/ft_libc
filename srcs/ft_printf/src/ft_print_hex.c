@@ -6,7 +6,7 @@
 /*   By: rguigneb <rguigneb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 11:16:44 by rguigneb          #+#    #+#             */
-/*   Updated: 2025/01/21 11:54:37 by rguigneb         ###   ########.fr       */
+/*   Updated: 2025/01/27 08:53:28 by rguigneb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ft_print_hex_big_x(unsigned long num_hex, int pre)
 void	ft_print_hex_x(unsigned long num_hex, int pre)
 {
 	static char	hex_base[] = "0123456789abcdef";
-	
+
 	if (num_hex <= 0)
 		return ;
 	if (pre)

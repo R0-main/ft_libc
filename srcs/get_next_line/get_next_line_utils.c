@@ -6,7 +6,7 @@
 /*   By: rguigneb <rguigneb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 14:56:55 by rguigneb          #+#    #+#             */
-/*   Updated: 2024/12/05 16:11:53 by rguigneb         ###   ########.fr       */
+/*   Updated: 2025/01/27 08:35:50 by rguigneb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*ft_strncatdup(char *src, char *second, size_t max)
 
 	i = -1;
 	k = 0;
-	result = (char *)malloc(sizeof(char) * (ft_strlen(src) + max + 1) + 1);
+	result = (char *)MALLOC(sizeof(char) * (ft_strlen(src) + max + 1) + 1);
 	if (!result)
 		return (NULL);
 	while (src[++i])

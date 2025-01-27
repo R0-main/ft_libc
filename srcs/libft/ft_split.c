@@ -6,11 +6,12 @@
 /*   By: rguigneb <rguigneb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 14:48:28 by rguigneb          #+#    #+#             */
-/*   Updated: 2025/01/21 11:38:20 by rguigneb         ###   ########.fr       */
+/*   Updated: 2025/01/27 08:56:47 by rguigneb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "garbadge.h"
 
 void	free_split_until_end(char **tab, int from)
 {
@@ -64,7 +65,7 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	total_len = get_word_count(s, c) * sizeof(char *) + sizeof(NULL);
-	tab = (char **)malloc(total_len);
+	tab = (char **)MALLOC(total_len);
 	if (!tab)
 		return (NULL);
 	while (*s)
