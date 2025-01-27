@@ -6,13 +6,13 @@
 /*   By: rguigneb <rguigneb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 09:06:24 by rguigneb          #+#    #+#             */
-/*   Updated: 2025/01/27 09:01:16 by rguigneb         ###   ########.fr       */
+/*   Updated: 2025/01/27 09:03:25 by rguigneb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_strings.h"
 
-bool	ft_isspace(char c)
+bool	ft_isspace(int c)
 {
 	return (c >= 9 && c <= 13);
 }
