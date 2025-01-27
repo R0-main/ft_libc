@@ -6,12 +6,11 @@
 /*   By: rguigneb <rguigneb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 09:06:24 by rguigneb          #+#    #+#             */
-/*   Updated: 2025/01/23 09:07:43 by rguigneb         ###   ########.fr       */
+/*   Updated: 2025/01/27 09:01:16 by rguigneb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdbool.h>
-#include "strings.h"
+#include "ft_strings.h"
 
 bool	ft_isspace(char c)
 {
