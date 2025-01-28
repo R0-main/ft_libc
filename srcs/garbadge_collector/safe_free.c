@@ -6,7 +6,7 @@
 /*   By: rguigneb <rguigneb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 08:31:08 by rguigneb          #+#    #+#             */
-/*   Updated: 2025/01/27 08:31:55 by rguigneb         ###   ########.fr       */
+/*   Updated: 2025/01/28 09:57:27 by rguigneb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	safe_free(void *pointer)
 {
-	t_list	*tmp;
 	t_list	*lst;
 	t_list	*prev;
 	t_list	**garbage_head;
