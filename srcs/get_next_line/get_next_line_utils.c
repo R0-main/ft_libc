@@ -6,7 +6,7 @@
 /*   By: rguigneb <rguigneb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 14:56:55 by rguigneb          #+#    #+#             */
-/*   Updated: 2025/01/27 08:35:50 by rguigneb         ###   ########.fr       */
+/*   Updated: 2025/01/28 11:40:38 by rguigneb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,6 @@ char	*ft_strncatdup(char *src, char *second, size_t max)
 		result[k++] = second[i];
 	result[k] = 0;
 	if (src)
-		free(src);
+		safe_free(src);
 	return (result);
 }
