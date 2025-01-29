@@ -22,7 +22,6 @@ ${NAME} : ${OBJS}
 	@ar rcs $@ $^
 
 %.o : %.c
-	@echo "${COLOUR_YELLOW}Compiling strings/$@"
 	@${CC} ${CFLAGS} -c $<
 
 clean:

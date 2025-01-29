@@ -26,7 +26,6 @@ ${NAME} : ${OBJS}
 	@ar rcs $@ $^
 
 %.o : %.c
-	@echo "${COLOUR_YELLOW}Compiling garbadge_collector/$@"
 	@${CC} ${CFLAGS} -c $<
 
 clean:

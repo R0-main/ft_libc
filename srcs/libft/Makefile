@@ -69,7 +69,6 @@ bonus: ${OBJS} ${BONUS_OBJS}
 	@ar rcs ${NAME} $^
 
 %.o : %.c
-	@echo "${COLOUR_YELLOW}Compiling libft/$@"
 	@${CC} ${CFLAGS} -c $<
 
 clean:
