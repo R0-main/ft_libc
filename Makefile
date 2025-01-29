@@ -2,7 +2,7 @@ NAME				=	ft_libc.a
 
 CC 					=	@clang
 INCLUDES_PATH		=	../../includes
-CFLAGS 				=	-Wall -Werror -Wextra -I$(INCLUDES_PATH)
+CFLAGS 				=	-Wall -Werror -Wextra -fPIE -I$(INCLUDES_PATH)
 
 COPY				=	@cp $@ $(NAME)
 AR					=	@ar
