@@ -1,10 +1,10 @@
-NAME				=	libftprintf.a
+NAME				=	libftfprintf.a
 
 INCLUDES_PATH		=	./includes
 CC					=	cc
 CFLAGS				=	-Wall -Werror -Wextra -I$(INCLUDES_PATH)
 
-SRCS				=	./src/ft_printf.c\
+SRCS				=	./src/ft_fprintf.c\
 						./src/ft_unsigned_putnbr.c\
 						./src/ft_print_hex.c\
 						./src/processing/address.c\

@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   num.c                                              :+:      :+:    :+:   */
+/*   address.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rguigneb <rguigneb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 14:25:52 by rguigneb          #+#    #+#             */
-/*   Updated: 2024/12/07 10:38:58 by rguigneb         ###   ########.fr       */
+/*   Updated: 2025/01/29 10:15:20 by rguigneb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_fprintf.h"
 
-int	handle_num(va_list args)
+int	handle_address(va_list args, int fd)
 {
-	int	n;
+	unsigned long	h;
 
-	n = va_arg(args, int);
-	ft_putnbr_fd(n, 1);
-	return (get_len_num((long)n));
+	h = va_arg(args, unsigned long);
+	if (!h)
+	{
+		ft_putstr_fd("(nil)", fd);
+		return (5);
+	}
+	ft_print_hex_x((unsigned long long)h, 1, fd);
+	return (get_hex_len(h, 1));
 }

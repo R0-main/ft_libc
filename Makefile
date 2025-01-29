@@ -9,14 +9,14 @@ AR					=	@ar
 
 SRCS_PATH			=	./srcs
 
-FT_PRINTF_PATH 		=	$(SRCS_PATH)/ft_printf/
+FT_FPRINTF_PATH 	=	$(SRCS_PATH)/ft_fprintf/
 LIBFT_PATH			=	$(SRCS_PATH)/libft/
 GNL_PATH			=	$(SRCS_PATH)/get_next_line/
 STRINGS_PATH		=	$(SRCS_PATH)/strings/
 GARBADGE_PATH		=	$(SRCS_PATH)/garbadge_collector/
 
 SRCS				=	$(LIBFT_PATH)\
-						$(FT_PRINTF_PATH)\
+						$(FT_FPRINTF_PATH)\
 						$(GNL_PATH)\
 						$(STRINGS_PATH)\
 						$(GARBADGE_PATH)
