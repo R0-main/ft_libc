@@ -6,13 +6,14 @@
 /*   By: rguigneb <rguigneb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 14:25:52 by rguigneb          #+#    #+#             */
-/*   Updated: 2025/01/29 10:15:20 by rguigneb         ###   ########.fr       */
+/*   Updated: 2025/01/29 10:20:39 by rguigneb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_fprintf.h"
 
-int	handle_char(va_list args, int fd) {
-  ft_putchar_fd(va_arg(args, int), fd);
-  return (1);
+int	handle_char(va_list args, int fd)
+{
+	ft_putchar_fd(va_arg(args, int), fd);
+	return (1);
 }
