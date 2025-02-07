@@ -6,7 +6,7 @@
 /*   By: rguigneb <rguigneb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 14:56:50 by rguigneb          #+#    #+#             */
-/*   Updated: 2025/01/27 08:35:53 by rguigneb         ###   ########.fr       */
+/*   Updated: 2025/02/07 11:41:05 by rguigneb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ char		*get_next_line(int fd);
 
 // UTILS
 long long	get_next_line_index(char *str);
-void		ft_bzero(void *s, size_t n);
 char		*ft_strncatdup(char *src, char *second, size_t max);
 
 #endif
