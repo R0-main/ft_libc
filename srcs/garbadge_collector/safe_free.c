@@ -6,7 +6,7 @@
 /*   By: rguigneb <rguigneb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 08:31:08 by rguigneb          #+#    #+#             */
-/*   Updated: 2025/01/28 12:32:50 by rguigneb         ###   ########.fr       */
+/*   Updated: 2025/02/10 16:00:16 by rguigneb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,27 @@
 
 void	safe_free(void *pointer)
 {
+	int	*context;
+
+	context = get_current_context();
+	if (!context)
+		return ;
+	if (!delete_from_context(pointer, *context))
+		return ;
+	free(pointer);
+}
+
+bool	delete_from_context(void *pointer, int context)
+{
 	t_list	*lst;
 	t_list	*prev;
 	t_list	**garbage_head;
 
-	garbage_head = get_garbage();
+	if (context < 0 || context >= CONTEXT_MAX)
+		return (true);
+	garbage_head = get_garbage_from_context(context);
 	if (!garbage_head || !*garbage_head)
-		return ;
+		return (true);
 	lst = *garbage_head;
 	prev = NULL;
 	while (lst)
@@ -29,22 +43,25 @@ void	safe_free(void *pointer)
 		{
 			if (prev)
 				prev->next = lst->next;
-			free(lst);
-			break ;
+			else
+				*garbage_head = NULL;
+			return (free(lst), true);
 		}
 		prev = lst;
 		lst = lst->next;
 	}
-	free(pointer);
+	return (false);
 }
 
-void	free_garbadge(void)
+void	free_garbadge(int context)
 {
 	t_list	*tmp;
 	t_list	*lst;
 	t_list	**garbage_head;
 
-	garbage_head = get_garbage();
+	if (context < 0 || context >= CONTEXT_MAX)
+		return ;
+	garbage_head = get_garbage_from_context(context);
 	if (!garbage_head || !*garbage_head)
 		return ;
 	lst = *garbage_head;

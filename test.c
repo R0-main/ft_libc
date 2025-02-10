@@ -1,22 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   garbadge.c                                         :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rguigneb <rguigneb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/23 14:55:20 by rguigneb          #+#    #+#             */
-/*   Updated: 2025/02/10 14:11:24 by rguigneb         ###   ########.fr       */
+/*   Created: 2025/02/10 14:07:36 by rguigneb          #+#    #+#             */
+/*   Updated: 2025/02/10 15:54:48 by rguigneb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "garbadge.h"
 
-t_list	**get_garbage_from_context(int context)
+char	*weird_function(void)
 {
-	static t_list	*collector[CONTEXT_MAX];
+	void	*s;
 
-	if (context < 0 || context >= CONTEXT_MAX)
-		return (NULL);
-	return (&collector[context]);
+	create_safe_malloc_context();
+	s = safe_malloc(1000);
+	ft_strlcpy(s, "This is my text i want to save", 31);
+	send_pointer_to_upper_context(s);
+	exit_safe_malloc_context();
+	return (s);
+}
+
+int	main(void)
+{
+	char	*s;
+
+	s = weird_function();
+	printf("%s\n", s);
+	exit_safe_malloc_context();
 }

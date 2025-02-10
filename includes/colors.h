@@ -6,7 +6,7 @@
 /*   By: rguigneb <rguigneb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 14:05:23 by rguigneb          #+#    #+#             */
-/*   Updated: 2025/02/10 14:06:08 by rguigneb         ###   ########.fr       */
+/*   Updated: 2025/02/10 16:00:31 by rguigneb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@
 # define BHWHT "\e[1;97m"
 
 // Reset
-# define reset "\e[0m"
+# define RESET "\e[0m"
 # define CRESET "\e[0m"
 # define COLOR_RESET "\e[0m"
 

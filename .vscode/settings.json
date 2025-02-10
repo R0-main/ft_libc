@@ -4,6 +4,7 @@
 		"libft.h": "c",
 		"garbadge.h": "c",
 		"strings.h": "c",
-		"ft_strings.h": "c"
+		"ft_strings.h": "c",
+		"stddef.h": "c"
 	}
 }

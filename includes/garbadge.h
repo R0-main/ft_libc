@@ -6,7 +6,7 @@
 /*   By: rguigneb <rguigneb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:10:18 by rguigneb          #+#    #+#             */
-/*   Updated: 2025/01/27 08:53:21 by rguigneb         ###   ########.fr       */
+/*   Updated: 2025/02/10 15:51:33 by rguigneb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define GARBADGE_H
 
 # include "libft.h"
+# include <stdbool.h>
 # include <stddef.h>
 # include <stdlib.h>
 
@@ -21,14 +22,21 @@
 #  define MALLOC
 # endif
 
+# define CONTEXT_MAX 255
+
 /******************************************************************************/
 
 void	*safe_malloc(size_t size);
 void	safe_exit(void);
-void	free_garbadge(void);
+void	free_garbadge(int context);
 void	safe_free(void *pointer);
-void	add_to_garbadge(void *pointer);
-t_list	**get_garbage(void);
-void	reset_garbadge(void);
+void	add_to_garbadge(void *pointer, int context);
+t_list	**get_garbage_from_context(int context);
+void	reset_garbadge(int context);
+int		*get_current_context(void);
+void	create_safe_malloc_context(void);
+void	exit_safe_malloc_context(void);
+void	send_pointer_to_upper_context(void *ptr);
+bool	delete_from_context(void *pointer, int context);
 
 #endif

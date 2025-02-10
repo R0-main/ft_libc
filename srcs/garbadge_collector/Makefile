@@ -16,6 +16,7 @@ SRCS				=	garbadge.c \
 						safe_exit.c\
 						safe_free.c\
 						safe_malloc.c\
+						context.c\
 						utils.c\
 
 OBJS				=	${SRCS:.c=.o}

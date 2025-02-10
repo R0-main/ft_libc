@@ -6,7 +6,7 @@
 /*   By: rguigneb <rguigneb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 08:32:36 by rguigneb          #+#    #+#             */
-/*   Updated: 2025/01/27 08:32:44 by rguigneb         ###   ########.fr       */
+/*   Updated: 2025/02/10 15:52:10 by rguigneb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	safe_exit(void)
 {
-	free_garbadge();
+	free_garbadge(0);
 	exit(1);
 }
