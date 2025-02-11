@@ -6,7 +6,7 @@
 /*   By: rguigneb <rguigneb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 14:11:51 by rguigneb          #+#    #+#             */
-/*   Updated: 2025/02/10 16:15:42 by rguigneb         ###   ########.fr       */
+/*   Updated: 2025/02/11 10:19:24 by rguigneb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,25 @@ int	*get_current_context(void)
 {
 	static int	context = 0;
 
+	if (context < 0)
+		context = 0;
+	else if (context >= CONTEXT_MAX)
+		context = CONTEXT_MAX - 1;
 	return (&context);
 }
 
-void	create_safe_malloc_context(void)
+void	create_safe_memory_context(void)
 {
 	int	*context;
 
 	context = get_current_context();
 	if (!context)
 		return ;
-	(*context)++;
+	if (*context < CONTEXT_MAX - 1)
+		(*context)++;
 }
 
-void	exit_safe_malloc_context(void)
+void	exit_safe_memory_context(void)
 {
 	int	*context;
 
@@ -37,18 +42,22 @@ void	exit_safe_malloc_context(void)
 	if (!context)
 		return ;
 	free_garbadge(*context);
-	(*context)--;
+	if (*context > 0)
+		(*context)--;
 }
 
 void	send_pointer_to_upper_context(void *ptr)
 {
 	int	*context;
 
+	if (!ptr)
+		return ;
 	context = get_current_context();
 	if (!context)
 		return ;
-	if (*context < 1)
-		return ;
-	add_to_garbadge(ptr, *context - 1);
-	delete_from_context(ptr, *context);
+	if (*context > 0)
+	{
+		add_to_garbadge(ptr, *context - 1);
+		delete_from_context(ptr, *context);
+	}
 }
