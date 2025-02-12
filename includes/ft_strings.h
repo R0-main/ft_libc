@@ -6,7 +6,7 @@
 /*   By: rguigneb <rguigneb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 15:03:54 by rguigneb          #+#    #+#             */
-/*   Updated: 2025/01/27 09:01:07 by rguigneb         ###   ########.fr       */
+/*   Updated: 2025/02/12 15:03:44 by rguigneb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_STRINGS_H
 
 # include <stdbool.h>
+# include "garbadge.h"
 
 bool	ft_isspace(int c);
 

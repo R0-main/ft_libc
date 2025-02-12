@@ -13,6 +13,7 @@ COLOUR_PURPLE		=	${START_COLOR}175;50;150m
 COLOUR_RED			=	${START_COLOR}255;0;0m
 
 SRCS				=	ft_isspace.c \
+						ft_strreplace.c
 
 OBJS				=	${SRCS:.c=.o}
 
