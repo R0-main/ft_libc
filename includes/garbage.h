@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   garbadge.h                                         :+:      :+:    :+:   */
+/*   garbage.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rguigneb <rguigneb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GARBADGE_H
-# define GARBADGE_H
+#ifndef GARBAGE_H
+# define GARBAGE_H
 
 # include "libft.h"
 # include <stdbool.h>
@@ -28,19 +28,19 @@
 
 void	*safe_malloc(size_t size);
 void	safe_exit(int exit_code);
-void	free_garbadge(int context);
+void	free_garbage(int context);
 void	safe_free(void *pointer);
-void	add_to_garbadge(void *pointer, int context);
+void	add_to_garbage(void *pointer, int context);
 t_list	**get_garbage_from_context(int context);
-void	reset_garbadge(int context);
+void	reset_garbage(int context);
 int		*get_current_context(void);
 void	create_safe_memory_context(void);
 void	exit_safe_memory_context(void);
 bool	delete_from_context(void *pointer, int context);
-void	reset_all_garbadges(void);
+void	reset_all_garbages(void);
 void	send_pointer_to_upper_context(void *ptr);
 void	send_pointer_to_main_context(void *pointer);
 
-void	free_all_contexts_garbadge(void);
+void	free_all_contexts_garbage(void);
 
 #endif

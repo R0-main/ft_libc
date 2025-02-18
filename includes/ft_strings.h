@@ -6,14 +6,14 @@
 /*   By: rguigneb <rguigneb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 15:03:54 by rguigneb          #+#    #+#             */
-/*   Updated: 2025/02/18 11:16:52 by rguigneb         ###   ########.fr       */
+/*   Updated: 2025/02/18 11:17:59 by rguigneb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_STRINGS_H
 # define FT_STRINGS_H
 
-# include "garbadge.h"
+# include "garbage.h"
 # include <stdbool.h>
 # include <stdlib.h>
 

@@ -2,7 +2,7 @@
 	"files.associations": {
 		"get_next_line.h": "c",
 		"libft.h": "c",
-		"garbadge.h": "c",
+		"garbage.h": "c",
 		"strings.h": "c",
 		"ft_strings.h": "c",
 		"stddef.h": "c"
