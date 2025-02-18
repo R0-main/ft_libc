@@ -6,7 +6,7 @@
 /*   By: rguigneb <rguigneb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:10:18 by rguigneb          #+#    #+#             */
-/*   Updated: 2025/02/11 09:49:33 by rguigneb         ###   ########.fr       */
+/*   Updated: 2025/02/18 11:16:46 by rguigneb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,10 @@ void	reset_garbadge(int context);
 int		*get_current_context(void);
 void	create_safe_memory_context(void);
 void	exit_safe_memory_context(void);
-void	send_pointer_to_upper_context(void *ptr);
 bool	delete_from_context(void *pointer, int context);
+void	reset_all_garbadges(void);
+void	send_pointer_to_upper_context(void *ptr);
+void	send_pointer_to_main_context(void *pointer);
 
 void	free_all_contexts_garbadge(void);
 
